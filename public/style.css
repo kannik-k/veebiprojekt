@@ -1,0 +1,5 @@
+body {
+    background-image: url('taltech.png'); /* Replace 'background-image.jpg' with the path to your image */
+    background-size: cover; /* This scales the image to cover the entire background */
+    background-attachment: fixed; /* This keeps the background fixed while scrolling */
+}
