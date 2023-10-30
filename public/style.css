@@ -71,3 +71,12 @@ body {
     position: absolute;
     line-height:20px;
 }
+
+.phone-logo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    transform: translate(50%, 0); /* Optional for centering */
+}
