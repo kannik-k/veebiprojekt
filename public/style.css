@@ -96,6 +96,23 @@ button.small-box-purple {
     line-height: 50px; /* Lisa vertikaalne keskpaigutus */
 }
 
+.header-box {
+    width: 100%;
+    height: 15%;
+    background-color: #eea4eb;
+    position: absolute;
+    line-height:20px;
+}
+
+.phone-logo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    transform: translate(50%, 0); /* Optional for centering */
+}
+
 .popup{
     width: 400px;
     height: 360x;
@@ -129,3 +146,22 @@ button.small-box-purple {
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
 }
+=======
+.header-box {
+    width: 100%;
+    height: 15%;
+    background-color: #eea4eb;
+    position: absolute;
+    line-height:20px;
+}
+
+.phone-logo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    transform: translate(50%, 0); /* Optional for centering */
+}
+
+>>>>>>> public/style.css
