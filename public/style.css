@@ -63,3 +63,13 @@ body {
     border-radius: 8px;
     background-color: #8a80cc;
 }
+
+.text-box input {
+    border: none; /* See eemaldab piirjoone */
+    border-radius: 8px; /* Lisab kasti ümber ümardatud nurgad */
+    width: 90%; /* Täidab kogu laiuse, mida tema vanem elemendid lubavad */
+    padding: 10px;
+    text-align: center;
+    font-family: "Kumar One";
+    font-size: 32px;
+}
