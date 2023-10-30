@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TTE</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="box">
+            <div class="small-box-purple"> <b class="button-text">kasutajanimi</b></div>
+            <div class="small-box-white">
+                <form class="text-box">
+                    <input type="text" placeholder="kasutajanimi" maxlength="25">
+                </form>
+            </div>
+            <div class="small-box-purple"><b class="button-text">salasõna</b></div>
+            <div class="small-box-white">
+                <form class="text-box">
+                    <input type="password" placeholder="salasõna" maxlength="25">
+                </form>
+                <script>
+                    function displayAsStars() {
+                    var inputText = document.getElementById("userText").value;
+                    alert("*".repeat(inputText.length));
+                    }
+                </script>
+            </div>
+            <div class="small-box-purple"><b class="button-text">logi sisse</b></div>
+        </div>
+        <a href="forgot_password_page.html" target="_self">
+        <div class="small-round-box">
+            <div style="text-align: center"><b>Unustasid parooli?</b></div>
+        </div>
+        </a>
+    </div>
+</body>
+</html>
