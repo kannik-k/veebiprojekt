@@ -107,7 +107,6 @@ button.small-box-purple {
     left: 50%;
     transform: translate(-50%, -50%) scale(0.1);
     text-align: center;
-    padding 0 30px 30px;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
