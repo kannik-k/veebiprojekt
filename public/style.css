@@ -29,3 +29,11 @@ body {
     z-index: 1;
     color: #000; /* Määrab selle, et tekst oleks endiselt must */
 }
+
+.header-box {
+    width: 100%;
+    height: 15%;
+    background-color: #eea4eb;
+    position: absolute;
+    line-height:20px;
+}
