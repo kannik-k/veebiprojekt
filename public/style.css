@@ -49,6 +49,7 @@ body {
     transform: translate(-50%,-50%);
     text-align: center;
     line-height: 125px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .small-box-white {
@@ -62,6 +63,11 @@ body {
     height: 20%;
     border-radius: 8px;
     background-color: #8a80cc;
+}
+
+button.small-box-purple {
+    border: none; /* Eemaldab nuppudelt ära piirjooned */
+    height: 19%;
 }
 
 .text-box input {
@@ -107,3 +113,55 @@ body {
     transform: translate(50%, 0); /* Optional for centering */
 }
 
+.popup{
+    width: 400px;
+    height: 360x;
+    background-color: #8a80cc;
+    border: 4px solid black;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.popup button {
+    width: 100%; /* Täidab kogu laiuse, mida tema vanem elemendid lubavad */
+    border: none; /* Eemaldab piirjoone */
+    border-radius: 8px; /* Lisab nupule ümardatud nurgad */
+    background-color: #8a80cc; /* Taustavärv */
+    color: black; /* Teksti värv */
+    font-size: 32px; /* Teksti suurus */
+    padding: 10px; /* Nupu sisemine täitemaht */
+    cursor: pointer; /* Muudab kursori näitama, et nupp on klikitav */
+    transition: background-color 0.3s, color 0.3s; /* Lisa üleminekumuudatused */
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+=======
+.header-box {
+    width: 100%;
+    height: 15%;
+    background-color: #eea4eb;
+    position: absolute;
+    line-height:20px;
+}
+
+.phone-logo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    transform: translate(50%, 0); /* Optional for centering */
+}
+
+>>>>>>> public/style.css
