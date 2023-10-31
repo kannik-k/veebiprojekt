@@ -163,3 +163,18 @@ button.small-box-purple {
     position: absolute;
     line-height:20px;
 }
+
+.normal-button{
+    width: 20%;
+    height: 20%;
+    background-color: #8a80cc;
+    border: 4px solid black;
+    border-radius: 25px;
+    color: black; /* Teksti värv */
+    text-align: center;
+    position: absolute;
+    line-height:20px;
+    display: flex; /* Lisab flex-konteineri */
+    justify-content: center; /* Horisontaalselt keskel */
+    align-items: center;
+}
