@@ -115,7 +115,7 @@ button.small-box-purple {
 
 .popup{
     width: 400px;
-    height: 360x;
+    height: 360px;
     background-color: #8a80cc;
     border: 4px solid black;
     border-radius: 8px;
@@ -125,7 +125,7 @@ button.small-box-purple {
     transform: translate(-50%, -50%) scale(0.1);
     text-align: center;
     visibility: hidden;
-    transition: transform 0.4s, top 0.4s
+    transition: transform 0.4s, top 0.4s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -146,22 +146,3 @@ button.small-box-purple {
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
 }
-=======
-.header-box {
-    width: 100%;
-    height: 15%;
-    background-color: #eea4eb;
-    position: absolute;
-    line-height:20px;
-}
-
-.phone-logo {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 0;
-    right: 50px;
-    transform: translate(50%, 0); /* Optional for centering */
-}
-
->>>>>>> public/style.css
