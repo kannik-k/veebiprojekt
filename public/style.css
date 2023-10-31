@@ -165,6 +165,7 @@ button.small-box-purple {
     display: flex; /* Lisab flex-konteineri */
     justify-content: center; /* Horisontaalselt keskel */
     align-items: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .normal-button{
@@ -180,4 +181,5 @@ button.small-box-purple {
     display: flex; /* Lisab flex-konteineri */
     justify-content: center; /* Horisontaalselt keskel */
     align-items: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
