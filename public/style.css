@@ -124,7 +124,14 @@ button.small-box-purple {
     text-align: center;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.blur-filter {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
 }
 
 .popup button {
