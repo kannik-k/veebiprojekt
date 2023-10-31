@@ -8,31 +8,42 @@
 <body>
     <div class="background">
         <div class="box">
-            <div class="small-box-purple"> <b class="button-text">kasutajatunnus</b></div>
+            <div class="small-box-purple"><b class="button-text">kasutajatunnus</b></div>
             <div class="small-box-white">
                 <form class="text-box">
-                    <input type="text" maxlength="25">
+                    <input type="text" id="username" maxlength="25">
                 </form>
             </div>
             <div class="small-box-purple"><b class="button-text">salasõna</b></div>
             <div class="small-box-white">
                 <form class="text-box">
-                    <input type="password" maxlength="25">
+                    <input type="password" id="password" maxlength="25">
                 </form>
-                <script>
-                    function displayAsStars() {
-                    var inputText = document.getElementById("userText").value;
-                    alert("*".repeat(inputText.length));
-                    }
-                </script>
             </div>
-            <div class="small-box-purple"><b class="button-text">logi sisse</b></div>
+            <div class="small-box-purple" onclick="checkFields()">
+                <b class="button-text" style="cursor: pointer;">logi sisse</b>
+            </div>
         </div>
-        <a href="forgot_password_page.html" target="_self">
-        <div class="small-round-box">
-            <div style="text-align: center"><b>Unustasid parooli?</b></div>
+        <div class="small-round-box" onclick="redirectForgotPassword()">
+            <div style="text-align: center; cursor: pointer;"><b>Unustasid parooli?</b></div>
         </div>
-        </a>
     </div>
+
+    <script>
+        function checkFields() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("Palun täitke mõlemad väljad enne sisselogimist!");
+            } else {
+                window.location.href = "user_homepage.html";
+            }
+        }
+
+        function redirectForgotPassword() {
+            window.location.href = "forgot_password_page.html";
+        }
+    </script>
 </body>
 </html>
