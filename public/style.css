@@ -1,6 +1,5 @@
 body {
-    font-family: "Kumar One";
-    font-size: 32px;
+    font: 32px Kumar One;
     margin: 0;
     background-color: #eea4eb;
 }
@@ -31,8 +30,7 @@ body {
 }
 
 .button-text{
-    font-family: "Kumar One";
-    font-size: 32px;
+    font: 32px Kumar One;
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -145,4 +143,41 @@ button.small-box-purple {
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.big-text-box{
+    width: 80%;
+    height: 15%;
+    background-color: #8a80cc;
+    border: 4px solid black;
+    border-radius: 25px;
+    color: black; /* Teksti värv */
+    text-align: center;
+    position: absolute;
+    line-height:20px;
+    display: flex; /* Lisab flex-konteineri */
+    justify-content: center; /* Horisontaalselt keskel */
+    align-items: center;
+}
+
+.normal-button{
+    width: 20%;
+    height: 20%;
+    background-color: #8a80cc;
+    border: 4px solid black;
+    border-radius: 25px;
+    color: black; /* Teksti värv */
+    text-align: center;
+    position: absolute;
+    line-height:20px;
+    display: flex; /* Lisab flex-konteineri */
+    justify-content: center; /* Horisontaalselt keskel */
+    align-items: center;
 }
