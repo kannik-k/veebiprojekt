@@ -190,3 +190,20 @@ button.small-box-purple {
     align-items: center;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
+
+.back-button{
+    width: 50px;
+    height: 50px;
+    background-color: #8a80cc;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-arrow{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
