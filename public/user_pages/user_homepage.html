@@ -5,18 +5,17 @@
     <title>TTE</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link rel="webpage icon" href="../images/phone_logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div class="background">
+    <div class="background" onclick="blurFilter(event)">
         <div class="header-box">
             <h1 class="button-text">TTE<br>TEHNIKATARVETE ESMAABI</h1>
             <img src="../images/phone_logo.png" alt="Phone Logo" class="phone-logo">
-            <a href="log_out_page.html" target="_self">
-                <div class="profile-box">
-                    <p class="profile-text">Maali Maasikas</p>
-                    <img src="../images/profile.png" alt="Profile Picture" class="profile-picture">
-                </div>
-            </a>
+            <button class="profile-box" onclick="openPopup(event)" style="cursor: pointer">
+                <p class="profile-text">Maali Maasikas</p>
+                <img src="../images/profile.png" alt="Profile Picture" class="profile-picture">
+            </button>
         </div>
         <a href="product_list_page.html" target="_self">
             <div class="normal-button" style="top: 30%;left: 20%">
@@ -34,5 +33,19 @@
             </div>
         </a>
     </div>
+    <div class="popup" id="popup">
+        <div class="box" style="height: 360px;">
+            <div class="small-box-purple" style="height: 120px; line-height: 120px"><b> Palun sisestage kood:</b></div>
+            <div class="small-box-white" style="height: 120px; line-height: 120px"></div>
+        </div>
+    </div>
+    <script>
+        function openPopup(event){
+            event.stopPropagation();
+            $(".popup").addClass("open-popup");
+            $(".background").addClass("blur-filter");
+        }
+
+    </script>
 </body>
 </html>
