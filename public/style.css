@@ -200,6 +200,8 @@ button.small-box-purple {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 4px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .back-arrow{
