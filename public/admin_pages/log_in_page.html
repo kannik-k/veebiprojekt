@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TTE</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="webpage icon" href="../images/phone_logo.png">
+</head>
+<body>
+    <div class="background">
+        <a href="../index.html" target="_self">
+            <div class="back-button" style="top: 1%;left: 0.5%">
+                <img src="../images/back_arrow.png" class="back-arrow">
+            </div>
+        </a>
+        <div class="box">
+            <div class="small-box-purple"><b class="button-text">kasutajatunnus</b></div>
+            <div class="small-box-white">
+                <form class="text-box">
+                    <input type="text" id="username" maxlength="25">
+                </form>
+            </div>
+            <div class="small-box-purple"><b class="button-text">salasõna</b></div>
+            <div class="small-box-white">
+                <form class="text-box">
+                    <input type="password" id="password" maxlength="25">
+                </form>
+            </div>
+            <div class="small-box-purple" onclick="checkFields()">
+                <b class="button-text" style="cursor: pointer;">logi sisse</b>
+            </div>
+        </div>
+        <div class="small-round-box" onclick="redirectForgotPassword()">
+            <div style="text-align: center; cursor: pointer;"><b>Unustasid parooli?</b></div>
+        </div>
+    </div>
+
+    <script>
+        function checkFields() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("Palun täitke mõlemad väljad enne sisselogimist!");
+            } else {
+                window.location.href = "user_homepage.html";
+            }
+        }
+
+        function redirectForgotPassword() {
+            window.location.href = "forgot_password_page.html";
+        }
+    </script>
+</body>
+</html>
