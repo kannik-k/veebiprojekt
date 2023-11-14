@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TTE</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="webpage icon" href="../images/phone_logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="background" onclick="blurFilter(event)">
+        <div class="header-box">
+            <a href="user_homepage.html" target="_self" class="custom-logo-link">
+                <h1 class="button-text">TTE<br>TEHNIKATARVETE ESMAABI</h1>
+            </a>
+            <img src="../images/phone_logo.png" alt="Phone Logo" class="phone-logo">
+            <button class="profile-box" onclick="openPopup(event)" style="cursor: pointer">
+                <p class="profile-text">Maali Maasikas</p>
+                <img src="../images/profile.png" alt="Profile Picture" class="profile-picture">
+            </button>
+        </div>
+        <a href="user_homepage.html" target="_self">
+            <div class="back-button" style="top: 16%;left: 0.5%">
+                <img src="../images/back_arrow.png" class="back-arrow">
+            </div>
+        </a>
+    </div>
+    <div class="popup" id="popup">
+        <div class="small-box-purple" style="height: 50%; line-height: 150px"><b>Kas soovite välja logida?</b></div>
+        <a href="/iti0105-2023-veebiprojekt/public/index.html" target="_self">
+            <div class="normal-button" style="top: 43%;left: 29%;width: 40%;height: 30%">
+                <p class="button-text">Jah</p>
+            </div>
+        </a>
+        <div class="close-popup-btn" onclick="closePopup()" style="top: -8%; left: 93%; cursor: pointer;">
+            <img src="../images/close-icon-13612.png">
+        </div>
+    </div>
+    <script>
+        function openPopup(event){
+            event.stopPropagation();
+            $(".popup").addClass("open-popup");
+            $(".background").addClass("blur-filter");
+        }
+
+        function closePopup(){
+            $(".popup").removeClass("open-popup");
+            $(".background").removeClass("blur-filter");
+        }
+    </script>
+</body>
+</html>
