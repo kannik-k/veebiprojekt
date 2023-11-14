@@ -34,9 +34,14 @@
         </a>
     </div>
     <div class="popup" id="popup">
-        <div class="box" style="height: 360px;">
-            <div class="small-box-purple" style="height: 120px; line-height: 120px"><b> Palun sisestage kood:</b></div>
-            <div class="small-box-white" style="height: 120px; line-height: 120px"></div>
+        <div class="small-box-purple" style="height: 50%; line-height: 150px"><b>Kas soovite välja logida?</b></div>
+        <a href="/iti0105-2023-veebiprojekt/public/index.html" target="_self">
+            <div class="normal-button" style="top: 43%;left: 29%;width: 40%;height: 30%">
+                <p class="button-text">Jah</p>
+            </div>
+        </a>
+        <div class="close-popup-btn" onclick="closePopup()" style="top: -8%; left: 93%; cursor: pointer;">
+            <img src="../images/close-icon-13612.png">
         </div>
     </div>
     <script>
@@ -46,6 +51,10 @@
             $(".background").addClass("blur-filter");
         }
 
+        function closePopup(){
+            $(".popup").removeClass("open-popup");
+            $(".background").removeClass("blur-filter");
+        }
     </script>
 </body>
 </html>
