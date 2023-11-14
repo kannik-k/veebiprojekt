@@ -18,38 +18,59 @@
             </div>
         </a>
         <div class="box" style="height: 380px;top: 47%;left: 30%">
-            <div class="small-box-purple" style="height: 25%"><b class="button-text" style="vertical-align: 40%">nimi</b></div>
+            <div class="small-box-purple" style="height: 25%">
+                <b class="button-text" style="vertical-align: 40%">nimi</b>
+            </div>
             <div class="small-box-white" style="height: 25%">
-                <form class="text-box" style=" position: relative;top: -15px">
-                    <input type="text" maxlength="25">
+                <form class="text-box" style="position: relative;top: -15px">
+                    <input type="text" maxlength="25" id="name">
                 </form>
             </div>
-            <div class="small-box-purple" style="height: 25%"><b class="button-text" style="vertical-align: 40%">telefoninumber</b></div>
+            <div class="small-box-purple" style="height: 25%">
+                <b class="button-text" style="vertical-align: 40%">telefoninumber</b>
+            </div>
             <div class="small-box-white" style="height: 25%;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px">
-                <form class="text-box" style=" position: relative;top: -15px">
-                    <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="8">
+                <form class="text-box" style="position: relative;top: -15px">
+                    <input type="text" id="phone_num" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="8">
                 </form>
             </div>
         </div>
         <div class="box" style="height: 380px;top: 47%;left: 70%">
-            <div class="small-box-purple" style="height: 25%"><b class="button-text" style="vertical-align: 40%">kasutajanimi</b></div>
+            <div class="small-box-purple" style="height: 25%">
+                <b class="button-text" style="vertical-align: 40%">kasutajatunnus</b>
+            </div>
             <div class="small-box-white" style="height: 25%">
-                <form class="text-box" style=" position: relative;top: -15px">
-                    <input type="text" maxlength="25">
+                <form class="text-box" style="position: relative;top: -15px">
+                    <input type="text" id="username" maxlength="25">
                 </form>
             </div>
-            <div class="small-box-purple" style="height: 25%"><b class="button-text" style="vertical-align: 40%">salasõna</b></div>
+            <div class="small-box-purple" style="height: 25%">
+                <b class="button-text" style="vertical-align: 40%">salasõna</b>
+            </div>
             <div class="small-box-white" style="height: 25%;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px">
-                <form class="text-box" style=" position: relative;top: -15px">
-                    <input type="text" maxlength="25">
+                <form class="text-box" style="position: relative;top: -15px">
+                    <input type="password" id="password" maxlength="25">
                 </form>
             </div>
         </div>
-        <a href="user_homepage.html" target="_self">
-            <div class="normal-button" style="top: 78%;left: 40%">
-                <p class="button-text">LOO KONTO</p>
-            </div>
-        </a>
+        <div class="normal-button" style="top: 78%;left: 40%">
+            <p class="button-text" onclick="checkFields()">LOO KONTO</p>
+        </div>
     </div>
+
+    <script>
+        function checkFields() {
+            var name = document.getElementById("name").value;
+            var phone_num = document.getElementById("phone_num").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "" || password === "" || name === "" || phone_num === "") {
+                alert("Kasutaja loomiseks palun täitke kõik väljad!");
+            } else {
+                window.location.href = "user_homepage.html";
+            }
+        }
+    </script>
 </body>
 </html>
