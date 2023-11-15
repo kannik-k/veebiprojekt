@@ -72,7 +72,7 @@ button.small-box-purple {
 .text-box input {
     border: none; /* See eemaldab piirjoone */
     border-radius: 8px; /* Lisab kasti ümber ümardatud nurgad */
-    width: 90%; /* Täidab kogu laiuse, mida tema vanem elemendid lubavad */
+    width: 80%; /* Täidab kogu laiuse, mida tema vanem elemendid lubavad */
     padding: 2%;
     text-align: center;
     font-family: "Kumar One";
@@ -277,3 +277,4 @@ button.small-box-purple {
     object-fit: cover;
     border-radius: 25px;
 }
+
