@@ -259,8 +259,8 @@ button.small-box-purple {
 }
 
 .map-box{
-    width: 35%;
-    height: 85%;
+    width: 30%;
+    height: 80%;
     position: absolute;
     background-color: #8a80cc;
     top: 15%;
@@ -281,4 +281,24 @@ button.small-box-purple {
 .custom-logo-link {
         color: black; /* Set your desired text color */
         text-decoration: none; /* Remove underline */
+    }
+
+.pin {
+    position: absolute;
+    top: 8%; /* Kohandage vastavalt soovitud positsioonile */
+    left: 8%; /* Kohandage vastavalt soovitud positsioonile */
+    transform: translate(-50%, -50%);
+    }
+
+.purple-box-for-map-list{
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 8px;
+    background-color: #8a80cc;
+    align-items: center;
+    left: 20%;
+    top: 37%;
+    border: 4px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     }
