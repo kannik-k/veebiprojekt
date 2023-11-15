@@ -272,8 +272,6 @@ button.small-box-purple {
     overflow: hidden; /* Peidab ülevoolu, kui sisu on suurem kui kasti suurus */
 }
 
-}
-
 .map-box img {
     width: 100%;
     height: 100%;
@@ -299,4 +297,31 @@ button.small-box-purple {
     top: 37%;
     border: 4px solid black;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    }
+
+table {
+    top: 25%;
+    left: 30%;
+    border-collapse: collapse;
+	border: 3px black solid;
+	position: absolute;
+	border: 4px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    align-items: center;
+    }
+
+td {
+	border: 3px black solid;
+    background-color: ghostwhite;
+    font: 32px Kumar One;
+    text-align: center;
+    }
+
+th {
+    border: 3px black solid;
+    background-color: #8a80cc;
+    font: 32px Kumar One;
+    text-transform: uppercase;
+    font-weight: 600;
     }
