@@ -72,7 +72,7 @@ button.small-box-purple {
 .text-box input {
     border: none; /* See eemaldab piirjoone */
     border-radius: 8px; /* Lisab kasti ümber ümardatud nurgad */
-    width: 90%; /* Täidab kogu laiuse, mida tema vanem elemendid lubavad */
+    width: 80%; /* Täidab kogu laiuse, mida tema vanem elemendid lubavad */
     padding: 2%;
     text-align: center;
     font-family: "Kumar One";
@@ -108,7 +108,7 @@ button.small-box-purple {
     width: 100px;
     height: 100px;
     position: absolute;
-    top: 0;
+    top: 7%;
     right: 50px;
     transform: translate(50%, 0); /* Optional for centering */
 }
@@ -231,12 +231,12 @@ button.small-box-purple {
 }
 
 .profile-box{
-    width: 220px;
+    width: 240px;
     height: 60px;
     position: absolute;
     background-color: #eea4eb;
-    top: 45%;
-    right: 5%;
+    top: 20%;
+    right: 8%;
     border: 4px solid black;
     border-radius: 25px;
     display: flex; /* Lisab flex-konteineri */
