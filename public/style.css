@@ -308,6 +308,7 @@ button.small-box-purple {
     background-color: #8a80cc;
     border: 4px solid black;
     border-radius: 25px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .pin {
@@ -332,7 +333,7 @@ button.small-box-purple {
 
 table {
     top: 25%;
-    left: 30%;
+    left: 10%;
     border-collapse: collapse;
 	border: 3px black solid;
 	position: absolute;
