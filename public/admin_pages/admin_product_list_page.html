@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TTE</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="webpage icon" href="../images/phone_logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="background" onclick="blurFilter(event)">
+
+        <!-- header -->
+        <div class="header-box">
+            <a href="admin_homepage.html" target="_self" class="custom-logo-link">
+                <h1 class="button-text">TTE<br>TEHNIKATARVETE ESMAABI</h1>
+            </a>
+            <img src="../images/phone_logo.png" alt="Phone Logo" class="phone-logo">
+            <button class="profile-box" onclick="openPopup(event)" style="cursor: pointer">
+                <p class="profile-text">Tõnu Tõru</p>
+                <img src="../images/profile.png" alt="Profile Picture" class="profile-picture">
+            </button>
+        </div>
+
+        <!-- back -->
+        <a href="admin_homepage.html" target="_self">
+            <div class="back-button" style="top: 16%;left: 0.5%">
+                <img src="../images/back_arrow.png" class="back-arrow">
+            </div>
+        </a>
+
+        <!-- products -->
+        <div class="product-container" style="top: 25%;left: 15%">
+            <img class="product-picture" src="../images/usb_type_c.png" alt="USB type C">
+            <div class="product-text-background">
+                <ul class="profile-text">
+                    <li>USB Type C laadija</li>
+                    <li>2m</li>
+                    <li>30W</li>
+                </ul>
+            </div>
+            <div class="normal-button" style="top:80%;left:28%;width:50%">
+                <p class="profile-text" style="left:1%">Laenuta toode</p>
+            </div>
+        </div>
+        <div class="product-container" style="top: 25%;left: 55%">
+            <img class="product-picture" src="../images/in_ear_headphones.png" alt="in-ear headphones">
+            <div class="product-text-background">
+                <ul class="profile-text">
+                    <li>Kõrvasisesed kõrvaklapid</li>
+                    <li>Type C ühendus</li>
+                </ul>
+            </div>
+            <div class="normal-button" style="top:80%;left:28%;width:50%">
+                <p class="profile-text" style="left:1%">Laenuta toode</p>
+            </div>
+        </div>
+        <div class="product-container" style="top: 75%;left: 15%">
+            <img class="product-picture" src="../images/usb_micro.png" alt="USB micro">
+            <div class="product-text-background">
+                <ul class="profile-text">
+                    <li>USB micro laadija</li>
+                    <li>1,5m</li>
+                </ul>
+            </div>
+            <div class="normal-button" style="top:80%;left:28%;width:50%">
+                <p class="profile-text" style="left:1%">Laenuta toode</p>
+            </div>
+        </div>
+        <div class="product-container" style="top: 75%;left: 55%">
+            <img class="product-picture" src="../images/iphone_charger.png" alt="iPhone charger">
+            <div class="product-text-background">
+                <ul class="profile-text">
+                    <li>iPhone'i laadija</li>
+                    <li>2m</li>
+                    <li>1A</li>
+                </ul>
+            </div>
+            <div class="normal-button" style="top:80%;left:28%;width:50%">
+                <p class="profile-text" style="left:1%">Laenuta toode</p>
+            </div>
+        </div>
+        <div class="product-container" style="top: 125%;left: 15%">
+            <img class="product-picture" src="../images/overhead_headphones_white.png" alt="White overhead headphones">
+            <div class="product-text-background">
+                <ul class="profile-text">
+                    <li>Kõrvapealsed kõrvaklapid</li>
+                    <li>Bluetooth</li>
+                    <li>AUX ühendus</li>
+                </ul>
+            </div>
+            <div class="normal-button" style="top:80%;left:28%;width:50%">
+                <p class="profile-text" style="left:1%">Laenuta toode</p>
+            </div>
+        </div>
+        <div class="product-container" style="top: 125%;left: 55%">
+            <img class="product-picture" src="../images/overhead_headphones_black.png" alt="Black overhead headphones">
+            <div class="product-text-background">
+                <ul class="profile-text">
+                    <li>Kõrvapealsed kõrvaklapid</li>
+                    <li>Bluetooth</li>
+                </ul>
+            </div>
+            <div class="normal-button" style="top:80%;left:28%;width:50%">
+                <p class="profile-text" style="left:1%">Laenuta toode</p>
+            </div>
+        </div>
+        <div class="product-container" style="top: 175%;left: 15%">
+            <img class="product-picture" src="../images/aux_cable.png" alt="AUX cable">
+            <div class="product-text-background">
+                <ul class="profile-text">
+                    <li>AUX juhe</li>
+                </ul>
+            </div>
+            <div class="normal-button" style="top:80%;left:28%;width:50%">
+                <p class="profile-text" style="left:1%">Laenuta toode</p>
+            </div>
+        </div>
+        <div class="product-container" style="top: 175%;left: 55%">
+            <img class="product-picture" src="../images/hdmi_cable.png" alt="HDMI cable">
+            <div class="product-text-background">
+                <ul class="profile-text">
+                    <li>HDMI juhe</li>
+                </ul>
+            </div>
+            <div class="normal-button" style="top:80%;left:28%;width:50%">
+                <p class="profile-text" style="left:1%">Laenuta toode</p>
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <div class="small-box-purple" style="height: 50%; line-height: 150px"><b>Kas soovite välja logida?</b></div>
+        <a href="../index.html" target="_self">
+            <div class="normal-button" style="top: 43%;left: 29%;width: 40%;height: 30%">
+                <p class="button-text">Jah</p>
+            </div>
+        </a>
+        <div class="close-popup-btn" onclick="closePopup()" style="top: -8%; left: 93%; cursor: pointer;">
+            <img src="../images/close-icon-13612.png">
+        </div>
+    </div>
+    <script>
+        function openPopup(event){
+            event.stopPropagation();
+            $(".popup").addClass("open-popup");
+            $(".background").addClass("blur-filter");
+        }
+
+        function closePopup(){
+            $(".popup").removeClass("open-popup");
+            $(".background").removeClass("blur-filter");
+        }
+    </script>
+</body>
+</html>
