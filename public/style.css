@@ -357,3 +357,28 @@ th {
     text-transform: uppercase;
     font-weight: 600;
     }
+
+.box-for-code-purple{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    border-radius: 8px;
+    background-color: #8a80cc;
+    text-align: center;
+    left: 25%;
+    top: 30%;
+    border: 4px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.box-for-code-pink{
+    position: absolute;
+    height: 30%;
+    width: 40%;
+    border-radius: 8px;
+    background-color: #eea4eb;
+    text-align: center;
+    left: 30%;
+    top: 40%;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
