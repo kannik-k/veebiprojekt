@@ -140,7 +140,7 @@ button.small-box-purple {
 }
 
 .popup button {
-    width: 100%; /* Täidab kogu laiuse, mida tema vanem elemendid lubavad */
+    width: 100%; /* Täidab kogu laiuse, mida tema vanem elemendid lubavad. */
     border: none; /* Eemaldab piirjoone */
     border-radius: 8px; /* Lisab nupule ümardatud nurgad */
     background-color: #8a80cc; /* Taustavärv */
