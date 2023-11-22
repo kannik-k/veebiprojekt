@@ -27,7 +27,7 @@
         <div class="box-for-code-purple">
             <p class="button-text" style="font-size: 25px;top:5%">SINU KOOD AUTOMAADIST TOOTE VÕTMISEKS</p>
             <div class="box-for-code-pink">
-                <p class="button-text">573945</p>
+                <p class="button-text" id="randomCode" style="line-height: 55px;"></p>
             </div>
         </div>
     </div>
@@ -43,6 +43,10 @@
         </div>
     </div>
     <script>
+        $(document).ready(function() {
+                generateRandomCode(); // Käivitatakse lehe laadimisel
+            });
+
         function openPopup(event){
             event.stopPropagation();
             $(".popup").addClass("open-popup");
@@ -52,6 +56,11 @@
         function closePopup(){
             $(".popup").removeClass("open-popup");
             $(".background").removeClass("blur-filter");
+        }
+
+        function generateRandomCode() {
+            var randomCode = Math.floor(100000 + Math.random() * 900000);
+            document.getElementById("randomCode").innerText = randomCode;
         }
     </script>
 </body>
