@@ -68,6 +68,7 @@
             if (username === "" || password === "" || name === "" || phone_num === "") {
                 alert("Kasutaja loomiseks palun täitke kõik väljad!");
             } else {
+                localStorage.setItem("username", username);
                 window.location.href = "user_homepage.html";
             }
         }

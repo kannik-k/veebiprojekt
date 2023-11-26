@@ -15,7 +15,7 @@
             <h1 class="button-text">TTE<br>TEHNIKATARVETE ESMAABI</h1>
             <img src="../images/phone_logo.png" alt="Phone Logo" class="phone-logo">
             <button class="profile-box" onclick="openPopup(event)" style="cursor: pointer">
-                <p class="profile-text">Tõnu Tõru</p>
+                <p class="profile-text"><span id="username"></span></p>
                 <img src="../images/profile.png" alt="Profile Picture" class="profile-picture">
             </button>
         </div>
@@ -67,6 +67,9 @@
             $(".popup").removeClass("open-popup");
             $(".background").removeClass("blur-filter");
         }
+
+        const username = localStorage.getItem("username");
+        document.getElementById("username").textContent = username;
     </script>
 </body>
 </html>

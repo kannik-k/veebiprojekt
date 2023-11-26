@@ -15,7 +15,7 @@
             </a>
             <img src="../images/phone_logo.png" alt="Phone Logo" class="phone-logo">
             <button class="profile-box" onclick="openPopupProfile(event)" style="cursor: pointer">
-                <p class="profile-text">Maali Maasikas</p>
+                <p class="profile-text"><span id="username"></span></p>
                 <img src="../images/profile.png" alt="Profile Picture" class="profile-picture">
             </button>
         </div>
@@ -162,6 +162,8 @@
             $(".background").removeClass("blur-filter");
         }
 
+        const username = localStorage.getItem("username");
+        document.getElementById("username").textContent = username;
     </script>
 </body>
 </html>
