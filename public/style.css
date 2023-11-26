@@ -47,7 +47,7 @@ body {
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
-    line-height: 90px;
+    line-height: 100px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 

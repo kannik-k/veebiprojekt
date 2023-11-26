@@ -43,6 +43,7 @@
             if (username === "" || password === "") {
                 alert("Palun täitke mõlemad väljad enne sisselogimist!");
             } else {
+                localStorage.setItem("username", username);
                 window.location.href = "user_homepage.html";
             }
         }
