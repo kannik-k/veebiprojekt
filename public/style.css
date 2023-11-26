@@ -19,7 +19,7 @@ body {
     width: 100%;
     height: 100%;
     background-image: url('images/taust2.png');
-    background-size: 1600px 3000px;
+    background-size: cover;
     filter: opacity(70%);
      z-index: -1;
 }
@@ -127,6 +127,7 @@ button.small-box-purple {
     text-align: center;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
+    z-index: 1;
 }
 
 .blur-filter {
@@ -135,10 +136,11 @@ button.small-box-purple {
     -o-filter: blur(10px);
     -ms-filter: blur(10px);
     filter: blur(10px);
+    position: fixed;
 }
 
 .popup button {
-    width: 100%; /* Täidab kogu laiuse, mida tema vanem elemendid lubavad */
+    width: 100%; /* Täidab kogu laiuse, mida tema vanem elemendid lubavad. */
     border: none; /* Eemaldab piirjoone */
     border-radius: 8px; /* Lisab nupule ümardatud nurgad */
     background-color: #8a80cc; /* Taustavärv */
