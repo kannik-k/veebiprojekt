@@ -68,6 +68,19 @@
             if (username === "" || password === "" || name === "" || phone_num === "") {
                 alert("Kasutaja loomiseks palun täitke kõik väljad!");
             } else {
+                var userData = {
+                    username: username,
+                    name: name,
+                    phone_num: phone_num,
+                    password: password,
+                    borrowed_items: []
+                };
+
+
+                var userList = JSON.parse(localStorage.getItem("user_list")) || {};
+                userList[username] = userData;
+                localStorage.setItem("user_list", JSON.stringify(userList));
+
                 localStorage.setItem("username", username);
                 window.location.href = "user_homepage.html";
             }
