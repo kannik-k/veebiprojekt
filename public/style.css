@@ -397,3 +397,48 @@ th {
     border: 4px solid black;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     }
+
+.nav-bar-box {
+    position: absolute;
+    height: 10%;
+    width: 40%;
+    border-radius: 8px;
+    background-color: #eea4eb;
+    left: 30%;
+    top: 17%;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+.topnav {
+    overflow: hidden;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: 4px solid black;
+    border-radius: 8px;
+    font-size: 17px;
+    width: 50%;
+    height: 70%;
+    left: 20%;
+    top:15%;
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+#search-button {
+    background-color: #ffffff;
+    color: white;
+    border: 4px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    position: absolute;
+    left: 71%;
+    top: 15%;
+    height: 70%;
+    width: 10%;
+}
