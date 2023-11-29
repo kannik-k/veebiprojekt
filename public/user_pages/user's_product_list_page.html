@@ -34,7 +34,7 @@
             <p class="button-text">Minu laenutatud tooted</p>
         </div>
 
-        <!-- products -->
+        <!-- products
         <div class="product-container" style="top: 35%;left: 20%">
             <img class="product-picture" src="../images/usb_type_c.png" alt="USB type C">
             <div class="product-text-background">
@@ -61,6 +61,13 @@
                 <p class="profile-text" style="left: 1%;">Tagasta toode</p>
             </div>
         </div>
+        I'll leave it here just in case I fuck up -->
+
+        <!-- product table -->
+        <table style="top: 30%; left: 30%">
+            <tr><th>toode</th><th>Kogus</th><th>Tagasta</th></tr>
+        </table>
+
     </div>
 
     <!-- popup -->
@@ -97,7 +104,7 @@
     </div>
     <script>
         $(document).ready(function() {
-                generateRandomCode(); // Käivitatakse lehe laadimisel
+                generateRandomCode();
             });
 
         function openPopup(event){
@@ -118,7 +125,7 @@
             generateRandomCode();
         }
 
-        function openPopupConfirmation(event){
+        function openPopupConfirmation(event, productIndex){
             event.stopPropagation();
             event.stopPropagation();
             $("#popup3").addClass("open-popup");
@@ -133,6 +140,36 @@
 
         const username = localStorage.getItem("username");
         document.getElementById("username").textContent = username;
+
+
+        function fillTable() {
+            var table = document.querySelector("table");
+            var rentedProducts = JSON.parse(localStorage.getItem("rented_products")) || [];
+
+            for (var i = 0; i < rentedProducts.length; i++) {
+                var row = table.insertRow(-1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+
+                cell1.innerHTML = rentedProducts[i].name;
+                cell2.innerHTML = rentedProducts[i].quantity || 0;
+
+                var popupButton = document.createElement("button");
+                popupButton.textContent = "Tagasta";
+                popupButton.onclick = function(event){
+                    openPopupReturnProduct(event);
+                }
+                popupButton.classList.add("del-button", "button-text");
+                popupButton.style.fontSize = "18px";
+                popupButton.style.cursor = "pointer";
+                cell3.appendChild(popupButton);
+
+            }
+        }
+
+        fillTable();
+
     </script>
 </body>
 </html>

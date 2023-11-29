@@ -32,6 +32,8 @@
                 </button>
             </div>
         </div>
+
+        <!-- Product1 -->
         <div class="product-container" style="top: 30%;left: 15%">
             <img class="product-picture" src="../images/usb_type_c.png" alt="USB type C">
             <div class="product-text-background">
@@ -41,10 +43,12 @@
                     <li>30W</li>
                 </ul>
             </div>
-            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event)">
+            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event, 'USB Type C laadija')">
                 <p class="profile-text" style="left:1%">Laenuta toode</p>
             </div>
         </div>
+
+        <!-- Product2 -->
         <div class="product-container" style="top: 30%;left: 55%">
             <img class="product-picture" src="../images/in_ear_headphones.png" alt="in-ear headphones">
             <div class="product-text-background">
@@ -53,10 +57,12 @@
                     <li>Type C ühendus</li>
                 </ul>
             </div>
-            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event)">
+            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event, 'Kõrvasisesed kõrvaklapid')">
                 <p class="profile-text" style="left:1%">Laenuta toode</p>
             </div>
         </div>
+
+        <!-- Product3 -->
         <div class="product-container" style="top: 80%;left: 15%">
             <img class="product-picture" src="../images/usb_micro.png" alt="USB micro">
             <div class="product-text-background">
@@ -65,10 +71,12 @@
                     <li>1,5m</li>
                 </ul>
             </div>
-            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event)">
+            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event, 'USB micro laadija')">
                 <p class="profile-text" style="left:1%">Laenuta toode</p>
             </div>
         </div>
+
+        <!-- Product4 -->
         <div class="product-container" style="top: 80%;left: 55%">
             <img class="product-picture" src="../images/iphone_charger.png" alt="iPhone charger">
             <div class="product-text-background">
@@ -78,10 +86,12 @@
                     <li>1A</li>
                 </ul>
             </div>
-            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event)">
+            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event, 'iPhone\'i laadija')">
                 <p class="profile-text" style="left:1%">Laenuta toode</p>
             </div>
         </div>
+
+        <!-- Product5 -->
         <div class="product-container" style="top: 130%;left: 15%">
             <img class="product-picture" src="../images/overhead_headphones_white.png" alt="White overhead headphones">
             <div class="product-text-background">
@@ -91,10 +101,12 @@
                     <li>AUX ühendus</li>
                 </ul>
             </div>
-            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event)">
+            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event, 'Kõrvapealsed kõrvaklapid')">
                 <p class="profile-text" style="left:1%">Laenuta toode</p>
             </div>
         </div>
+
+        <!-- Product6 -->
         <div class="product-container" style="top: 130%;left: 55%">
             <img class="product-picture" src="../images/overhead_headphones_black.png" alt="Black overhead headphones">
             <div class="product-text-background">
@@ -103,10 +115,12 @@
                     <li>Bluetooth</li>
                 </ul>
             </div>
-            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event)">
+            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event, 'Kõrvapealsed kõrvaklapid')">
                 <p class="profile-text" style="left:1%">Laenuta toode</p>
             </div>
         </div>
+
+        <!-- Product7 -->
         <div class="product-container" style="top: 180%;left: 15%">
             <img class="product-picture" src="../images/aux_cable.png" alt="AUX cable">
             <div class="product-text-background">
@@ -114,10 +128,12 @@
                     <li>AUX juhe</li>
                 </ul>
             </div>
-            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event)">
+            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event, 'AUX juhe')">
                 <p class="profile-text" style="left:1%">Laenuta toode</p>
             </div>
         </div>
+
+        <!-- Product8 -->
         <div class="product-container" style="top: 180%;left: 55%">
             <img class="product-picture" src="../images/hdmi_cable.png" alt="HDMI cable">
             <div class="product-text-background">
@@ -125,13 +141,14 @@
                     <li>HDMI juhe</li>
                 </ul>
             </div>
-            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event)">
+            <div class="normal-button" style="top:80%;left:28%;width:50%;cursor: pointer" onclick="openPopupRentProduct(event, 'HDMI juhe')">
                 <p class="profile-text" style="left:1%">Laenuta toode</p>
             </div>
         </div>
         <div class="header-box"style="top:230%;display:flex;align-items: flex-end;justify-content: center">
             <h1 class="button-text">TTE</h1>
         </div>
+
     </div>
     <div class="popup" id="popup">
         <div class="small-box-purple" style="height: 50%; line-height: 150px"><b>Kas soovite välja logida?</b></div>
@@ -147,7 +164,7 @@
     <div class="popup" id="popup2">
         <div class="small-box-purple" style="height: 50%; line-height: 150px"><b>Kas olete kindel?</b></div>
         <a href="code_for_package_page.html" target="_self">
-            <div class="normal-button" style="top: 43%;left: 29%;width: 40%;height: 30%">
+            <div class="normal-button" style="top: 43%;left: 29%;width: 40%;height: 30%" onclick="confirmRentProduct()">
                 <p class="button-text">Jah</p>
             </div>
         </a>
@@ -162,10 +179,11 @@
             $(".background").addClass("blur-filter");
         }
 
-        function openPopupRentProduct(event){
+        function openPopupRentProduct(event, productName){
             event.stopPropagation();
             $("#popup2").addClass("open-popup");
             $(".background").addClass("blur-filter");
+            localStorage.setItem("rentedProductName", productName);
         }
 
         function closePopup(){
@@ -175,6 +193,24 @@
 
         const username = localStorage.getItem("username");
         document.getElementById("username").textContent = username;
+
+        //for localStorage
+        function confirmRentProduct() {
+            var rentedProductName = localStorage.getItem("rentedProductName");
+            if (rentedProductName) {
+                var rentedProducts = JSON.parse(localStorage.getItem("rented_products")) || [];
+
+                var existingProductIndex = rentedProducts.findIndex(product => product.name === rentedProductName);
+
+                if (existingProductIndex !== -1) {
+                    rentedProducts[existingProductIndex].quantity = (rentedProducts[existingProductIndex].quantity || 0) + 1;
+                } else {
+                    rentedProducts.push({ name: rentedProductName, quantity: 1 });
+                }
+                localStorage.setItem("rented_products", JSON.stringify(rentedProducts));
+            }
+        }
+
     </script>
 </body>
 </html>
