@@ -31,7 +31,7 @@ body {
 }
 
 .button-text{
-    font: 32px Kumar One;
+    font: 28px Kumar One;
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -63,6 +63,7 @@ body {
     border-radius: 8px;
     background-color: #8a80cc;
     align-items: center;
+    text-align: center;
 }
 
 button.small-box-purple {
@@ -95,6 +96,7 @@ button.small-box-purple {
     justify-content: center; /* Horisontaalselt keskel */
     align-items: center; /* Vertikaalselt keskel */
     line-height: 50px; /* Lisa vertikaalne keskpaigutus */
+    font: 28px Kumar One;
 }
 
 .header-box {
@@ -266,8 +268,8 @@ button.small-box-purple {
     height: 80%;
     position: absolute;
     background-color: #8a80cc;
-    top: 15%;
-    right: 0%;
+    top: 17%;
+    right: 5%;
     border: 4px solid black;
     border-radius: 25px;
     align-items: center;
