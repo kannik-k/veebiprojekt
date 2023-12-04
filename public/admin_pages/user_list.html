@@ -65,8 +65,8 @@
 
         // Function to fill the table
         function fillTable() {
-            var table = document.querySelector("table");
-            var userList = JSON.parse(localStorage.getItem("user_list")) || {};
+        var table = document.querySelector("table");
+        var userList = JSON.parse(localStorage.getItem("user_list")) || {};
 
         for (var username in userList) {
             if (userList.hasOwnProperty(username)) {
@@ -86,9 +86,11 @@
 
                 var deleteButton = document.createElement("button");
                 deleteButton.textContent = "Kustuta";
-                deleteButton.onclick = function() {
-                    deleteUser(username);
-                };
+                deleteButton.onclick = function(username) {
+                    return function() {
+                        deleteUser(username);
+                    };
+                }(username); // Pass username as a parameter using a closure
                 deleteButton.classList.add("del-button", "button-text");
                 deleteButton.style.fontSize = "18px";
                 deleteButton.style.cursor = "pointer";
@@ -103,6 +105,7 @@
         localStorage.setItem("user_list", JSON.stringify(userList));
         location.reload();
     }
+
 
     window.onload = function () {
         fillTable();
