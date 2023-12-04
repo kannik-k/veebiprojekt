@@ -131,6 +131,7 @@
             $("#popup3").addClass("open-popup");
             $(".background").addClass("blur-filter");
             generateRandomCode();
+            deleteProduct(productName, productQuantity);
         }
 
         function generateRandomCode() {
@@ -142,11 +143,15 @@
         document.getElementById("username").textContent = username;
 
 
-        function fillTable() {
-            var table = document.querySelector("table");
-            var rentedProducts = JSON.parse(localStorage.getItem("rented_products")) || [];
+    function fillTable() {
+        var table = document.querySelector("table");
+        var rentedProducts = JSON.parse(localStorage.getItem("rented_products")) || [];
 
-            for (var i = 0; i < rentedProducts.length; i++) {
+        // Clear existing rows in the table
+        table.innerHTML = "<tr><th>toode</th><th>Kogus</th><th>Tagasta</th></tr>";
+
+        for (var i = 0; i < rentedProducts.length; i++) {
+            if (rentedProducts[i].quantity > 0) { // Only add rows for products with quantity > 0
                 var row = table.insertRow(-1);
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
@@ -157,19 +162,44 @@
 
                 var popupButton = document.createElement("button");
                 popupButton.textContent = "Tagasta";
-                popupButton.onclick = function(event){
-                    openPopupReturnProduct(event);
-                }
                 popupButton.classList.add("del-button", "button-text");
                 popupButton.style.fontSize = "18px";
                 popupButton.style.cursor = "pointer";
-                cell3.appendChild(popupButton);
 
+                popupButton.onclick = openPopupReturnProduct.bind(null, rentedProducts[i].name);
+
+                cell3.appendChild(popupButton);
             }
         }
+    }
 
-        fillTable();
 
+    fillTable();
+
+    function openPopupReturnProduct(productName) {
+        $("#popup2").addClass("open-popup");
+        $(".background").addClass("blur-filter");
+        generateRandomCode();
+        decreaseQuantity(productName);
+    }
+
+    function decreaseQuantity(productName) {
+        var rentedProducts = JSON.parse(localStorage.getItem("rented_products")) || [];
+        var index = rentedProducts.findIndex(product => product.name === productName);
+
+        // Kontrollime, kas kogus on suurem kui 0
+        if (index !== -1 && rentedProducts[index].quantity > 0) {
+            rentedProducts[index].quantity -= 1;
+            localStorage.setItem("rented_products", JSON.stringify(rentedProducts));
+            fillTable();
+        } else {
+            // Kui kogus on 0, eemaldame vastava rea tabelist, kui see olemas on
+            var table = document.querySelector("table");
+            if (table.rows.length > index + 1) {
+                table.deleteRow(index + 1); // +1, sest päise rida on ka tabelis
+            }
+        }
+    }
     </script>
 </body>
 </html>
