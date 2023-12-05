@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TTE</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="webpage icon" href="../images/phone_logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="background" onclick="blurFilter(event)">
+
+        <!-- header -->
+        <div class="header-box">
+            <a href="admin_homepage.html" target="_self" class="custom-logo-link">
+                <h1 class="button-text">TTE<br>TEHNIKATARVETE ESMAABI</h1>
+            </a>
+            <img src="../images/phone_logo.png" alt="Phone Logo" class="phone-logo">
+            <button class="profile-box" onclick="openPopup(event)" style="cursor: pointer">
+                <p class="profile-text"><span id="username"></span></p>
+                <img src="../images/profile.png" alt="Profile Picture" class="profile-picture">
+            </button>
+        </div>
+
+        <!-- back -->
+        <a href="admin_homepage.html" target="_self">
+            <div class="back-button" style="top: 16%;left: 0.5%">
+                <img src="../images/back_arrow.png" class="back-arrow">
+            </div>
+        </a>
+
+        <!-- table -->
+        <table id="complaintTable" style="width: 900px;">
+            <tr>
+                <th>Kasutajanimi</th>
+                <th>Toote nimi</th>
+                <th>Probleem</th>
+                <th>Lahendatud</th>
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- popup -->
+    <div class="popup" id="popup">
+        <div class="small-box-purple" style="height: 50%; line-height: 150px"><b>Kas soovite välja logida?</b></div>
+        <a href="../index.html" target="_self">
+            <div class="normal-button" style="top: 43%;left: 29%;width: 40%;height: 30%">
+                <p class="button-text">Jah</p>
+            </div>
+        </a>
+        <div class="close-popup-btn" onclick="closePopup()" style="top: -8%; left: 93%; cursor: pointer;">
+            <img src="../images/close-icon-13612.png">
+        </div>
+    </div>
+
+    <script>
+        function openPopup(event){
+            event.stopPropagation();
+            $(".popup").addClass("open-popup");
+            $(".background").addClass("blur-filter");
+        }
+
+        function closePopup(){
+            $(".popup").removeClass("open-popup");
+            $(".background").removeClass("blur-filter");
+        }
+
+        const username = localStorage.getItem("username");
+        document.getElementById("username").textContent = username;
+
+        function toggleColor(row) {
+            const currentColor = row.style.color;
+            row.style.color = currentColor === 'red' ? '#32CD32' : 'red';
+        }
+
+        function fillTable() {
+            const problemList = JSON.parse(localStorage.getItem("problem_list")) || [];
+
+            if (!problemList.length) {
+                console.error("Problem list is empty or not found.");
+                return;
+            }
+
+            const table = document.getElementById("complaintTable");
+
+            if (table) {
+                table.innerHTML = "<tr><th>Kasutajanimi</th><th>Toote nimi</th><th>Probleem</th><th>Lahendatud</th></tr>";
+
+                problemList.forEach(problemData => {
+                    const row = table.insertRow(-1);
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+                    const cell3 = row.insertCell(2);
+                    const cell4 = row.insertCell(3);
+
+                    cell1.textContent = problemData.name;
+                    cell2.textContent = problemData.productName;
+                    cell3.textContent = problemData.problem;
+
+                    const button = document.createElement('button');
+                    button.textContent = 'Lahenda';
+                    button.classList.add("del-button", "button-text");
+                    button.style.fontSize = "18px";
+                    button.style.cursor = "pointer";
+
+                    button.addEventListener('click', function() {
+                        toggleColor(row);
+                    });
+
+                    cell4.appendChild(button);
+
+                    row.style.color = 'red';
+                });
+            } else {
+                console.error("Table element not found.");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("Script loaded.");
+            fillTable();
+        });
+    </script>
+</body>
+</html>

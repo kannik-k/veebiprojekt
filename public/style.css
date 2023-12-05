@@ -98,6 +98,17 @@ button.small-box-purple {
     font-size: 32px;
     align-items: center;
 }
+.text-box textarea {
+            width: 80%;
+            border: none;
+            border-radius: 8px;
+            padding: 2%;
+            text-align: center;
+            font-size: 28px;
+            font-family: "Kumar One";
+            align-items:center;
+        }
+
 
 .small-round-box{
     width: 300px;
@@ -383,8 +394,7 @@ table {
     border: 4px solid black;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
+    width: 600px;
     background-color: white;
 }
 
