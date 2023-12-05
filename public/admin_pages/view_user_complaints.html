@@ -31,7 +31,12 @@
 
         <!-- table -->
         <table id="complaintTable" style="width: 900px;">
-            <tr><th>Kasutajanimi</th><th>Toote nimi</th><th>Probleem</th></tr>
+            <tr>
+                <th>Kasutajanimi</th>
+                <th>Toote nimi</th>
+                <th>Probleem</th>
+                <th>Lahendatud</th>
+            </tr>
         </table>
 
     </div>
@@ -64,42 +69,54 @@
         const username = localStorage.getItem("username");
         document.getElementById("username").textContent = username;
 
-        // Function to fill the table
+        function toggleColor(row) {
+            const currentColor = row.style.color;
+            row.style.color = currentColor === 'red' ? '#32CD32' : 'red';
+        }
+
         function fillTable() {
-            // Saame andmed localStorage'ist
             const problemList = JSON.parse(localStorage.getItem("problem_list")) || [];
 
-            // Kontrolli, kas probleemilist on olemas
             if (!problemList.length) {
                 console.error("Problem list is empty or not found.");
                 return;
             }
 
-            // Tabeli element
             const table = document.getElementById("complaintTable");
 
-            // Kontrolli, kas tabeli element on olemas
             if (table) {
-                // Kustuta olemasolevad read
-                table.innerHTML = "<tr><th>Kasutajanimi</th><th>Toote nimi</th><th>Probleem</th></tr>";
+                table.innerHTML = "<tr><th>Kasutajanimi</th><th>Toote nimi</th><th>Probleem</th><th>Lahendatud</th></tr>";
 
-                // Lisa andmed tabelisse
                 problemList.forEach(problemData => {
                     const row = table.insertRow(-1);
                     const cell1 = row.insertCell(0);
                     const cell2 = row.insertCell(1);
                     const cell3 = row.insertCell(2);
+                    const cell4 = row.insertCell(3);
 
                     cell1.textContent = problemData.name;
                     cell2.textContent = problemData.productName;
                     cell3.textContent = problemData.problem;
+
+                    const button = document.createElement('button');
+                    button.textContent = 'Lahenda';
+                    button.classList.add("del-button", "button-text");
+                    button.style.fontSize = "18px";
+                    button.style.cursor = "pointer";
+
+                    button.addEventListener('click', function() {
+                        toggleColor(row);
+                    });
+
+                    cell4.appendChild(button);
+
+                    row.style.color = 'red';
                 });
             } else {
                 console.error("Table element not found.");
             }
         }
 
-        // Kutsume välja funktsiooni, et täita tabel andmetega
         document.addEventListener("DOMContentLoaded", function() {
             console.log("Script loaded.");
             fillTable();
