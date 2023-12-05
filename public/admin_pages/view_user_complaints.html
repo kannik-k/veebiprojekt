@@ -9,35 +9,34 @@
 </head>
 <body>
     <div class="background" onclick="blurFilter(event)">
+
+        <!-- header -->
         <div class="header-box">
-            <h1 class="button-text">TTE<br>TEHNIKATARVETE ESMAABI</h1>
+            <a href="admin_homepage.html" target="_self" class="custom-logo-link">
+                <h1 class="button-text">TTE<br>TEHNIKATARVETE ESMAABI</h1>
+            </a>
             <img src="../images/phone_logo.png" alt="Phone Logo" class="phone-logo">
             <button class="profile-box" onclick="openPopup(event)" style="cursor: pointer">
                 <p class="profile-text"><span id="username"></span></p>
                 <img src="../images/profile.png" alt="Profile Picture" class="profile-picture">
             </button>
         </div>
-        <a href="product_list_page.html" target="_self">
-            <div class="normal-button" style="top: 30%;left: 20%">
-                <p class="button-text">TOODETE NIMEKIRI</p>
+
+        <!-- back -->
+        <a href="admin_homepage.html" target="_self">
+            <div class="back-button" style="top: 16%;left: 0.5%">
+                <img src="../images/back_arrow.png" class="back-arrow">
             </div>
         </a>
-        <a href="map_page.html" target="_self">
-            <div class="normal-button" style="top: 30%;left: 60%">
-                <p class="button-text">AUTOMAATIDE ASUKOHAD</p>
-            </div>
-        </a>
-        <a href="user's_product_list_page.html" target="_self">
-            <div class="normal-button" style="top: 60%;left: 20%">
-                <p class="button-text">MINU LAENUTATUD TOOTED</p>
-            </div>
-        </a>
-        <a href="user_complaint.html" target="_self">
-            <div class="normal-button" style="top: 60%;left: 60%">
-                <p class="button-text">TEAVITA VIGASEST TOOOTEST</p>
-            </div>
-        </a>
+
+        <!-- table -->
+        <table style="width: 900px;">
+            <tr><th>Kasutajanimi</th><th>Toote nimi</th> <th>Probleem</th></tr>
+        </table>
+
     </div>
+
+    <!-- popup -->
     <div class="popup" id="popup">
         <div class="small-box-purple" style="height: 50%; line-height: 150px"><b>Kas soovite välja logida?</b></div>
         <a href="../index.html" target="_self">
@@ -49,6 +48,7 @@
             <img src="../images/close-icon-13612.png">
         </div>
     </div>
+
     <script>
         function openPopup(event){
             event.stopPropagation();
@@ -63,6 +63,39 @@
 
         const username = localStorage.getItem("username");
         document.getElementById("username").textContent = username;
+
+        // Function to fill the table
+        function fillTable() {
+            // Saame andmed localStorage'ist
+            const problemList = JSON.parse(localStorage.getItem("problem_list")) || [];
+
+            // Tabeli element
+            const table = document.getElementById("complaintTable");
+
+            // Kontrolli, kas tabeli element on olemas
+            if (table) {
+                // Kustuta olemasolevad read
+                table.innerHTML = "<tr><th>Kasutajanimi</th><th>Toote nimi</th><th>Probleem</th></tr>";
+
+                // Lisa andmed tabelisse
+                problemList.forEach(problemData => {
+                    const row = table.insertRow(-1);
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+                    const cell3 = row.insertCell(2);
+
+                    cell1.textContent = problemData.name;
+                    cell2.textContent = problemData.productName;
+                    cell3.textContent = problemData.problem;
+                });
+            } else {
+                console.error("Table element not found.");
+            }
+        }
+
+        // Kutsume välja funktsiooni, et täita tabel andmetega
+        fillTable();
     </script>
+
 </body>
 </html>
