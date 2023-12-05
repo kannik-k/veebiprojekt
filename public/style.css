@@ -281,12 +281,12 @@ button.small-box-purple {
 }
 
 .map-box{
-    width: 30%;
-    height: 80%;
+    width: 400px;
+    height: 500px;
     position: absolute;
     background-color: #8a80cc;
     top: 17%;
-    right: 5%;
+    right: 20%;
     border: 4px solid black;
     border-radius: 25px;
     align-items: center;
@@ -332,12 +332,34 @@ button.small-box-purple {
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
+.pin-container{
+    position: absolute;
+}
+
 .pin {
     position: absolute;
-    top: 8%; /* Kohandage vastavalt soovitud positsioonile */
-    left: 8%; /* Kohandage vastavalt soovitud positsioonile */
-    transform: translate(-50%, -50%);
-    }
+    z-index: 1;
+}
+
+.image-overlay {
+    position: absolute;
+    top: -530%;
+    left: -430%;
+    width: 450px;
+    height: 235px;
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 25px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.pin-container:hover .image-overlay {
+  opacity: 100%;
+  pointer-events: auto;
+}
 
 .purple-box-for-map-list{
     position: absolute;
