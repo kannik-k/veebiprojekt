@@ -53,21 +53,35 @@
                 </form>
             </div>
         </div>
-        <div class="normal-button" style="top: 78%;left: 40%;cursor: pointer" onclick="checkFields()">
+        <div class="normal-button" style="top: 78%;left: 40%;cursor: pointer" onclick="checkFields()" id="createAccountButton" disabled>
             <p class="button-text">LOO KONTO</p>
         </div>
+
+        <!-- terms and conditions checkbox-->
+        <form action="/action_page.php" style="position: absolute; top: 70%; left: 50%;">
+            <div class="small-round-box" style="width: 600px;">
+                <input type="checkbox" id="checkbox1" onchange="enableButton()">
+                <label for="checkbox1" style="font: 28px Kumar One;">Olen lugenud ja nõustun <a href="terms_and_conditions.html" target="_blank">kasutustingimustega</a>.</label><br>
+            </div>
+        </form>
     </div>
 
     <script>
-        function checkFields() {
-            var name = document.getElementById("name").value;
-            var phone_num = document.getElementById("phone_num").value;
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
+        function enableButton() {
+            var checkbox = document.getElementById("checkbox1");
+            var createAccountButton = document.getElementById("createAccountButton");
 
-            if (username === "" || password === "" || name === "" || phone_num === "") {
-                alert("Kasutaja loomiseks palun täitke kõik väljad!");
-            } else {
+            // Lubab nuppu ainult siis, kui kõik väljad on täidetud ja märkeruut on märgitud
+            createAccountButton.disabled = !(checkbox.checked && checkAllFields());
+        }
+
+        function checkFields() {
+            if (checkAllFields()) {
+                var name = document.getElementById("name").value;
+                var phone_num = document.getElementById("phone_num").value;
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+
                 var userData = {
                     username: username,
                     name: name,
@@ -76,14 +90,24 @@
                     borrowed_items: []
                 };
 
-
                 var userList = JSON.parse(localStorage.getItem("user_list")) || {};
                 userList[username] = userData;
                 localStorage.setItem("user_list", JSON.stringify(userList));
 
                 localStorage.setItem("username", username);
                 window.location.href = "user_homepage.html";
+            } else {
+                alert("Kasutaja loomiseks palun täitke kõik väljad ja nõustuge kasutustingimustega!");
             }
+        }
+
+        function checkAllFields() {
+            var name = document.getElementById("name").value;
+            var phone_num = document.getElementById("phone_num").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            return username !== "" && password !== "" && name !== "" && phone_num !== "";
         }
     </script>
 </body>
