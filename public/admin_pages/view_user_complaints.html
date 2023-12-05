@@ -30,8 +30,8 @@
         </a>
 
         <!-- table -->
-        <table style="width: 900px;">
-            <tr><th>Kasutajanimi</th><th>Toote nimi</th> <th>Probleem</th></tr>
+        <table id="complaintTable" style="width: 900px;">
+            <tr><th>Kasutajanimi</th><th>Toote nimi</th><th>Probleem</th></tr>
         </table>
 
     </div>
@@ -69,6 +69,12 @@
             // Saame andmed localStorage'ist
             const problemList = JSON.parse(localStorage.getItem("problem_list")) || [];
 
+            // Kontrolli, kas probleemilist on olemas
+            if (!problemList.length) {
+                console.error("Problem list is empty or not found.");
+                return;
+            }
+
             // Tabeli element
             const table = document.getElementById("complaintTable");
 
@@ -94,8 +100,10 @@
         }
 
         // Kutsume välja funktsiooni, et täita tabel andmetega
-        fillTable();
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("Script loaded.");
+            fillTable();
+        });
     </script>
-
 </body>
 </html>
