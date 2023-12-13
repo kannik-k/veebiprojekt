@@ -30,9 +30,23 @@
         </a>
 
         <!-- Tabel -->
-        <table>
-            <tr><th>Kasutajanimi</th><td><form class="text-box" style="padding: 1%"><input id="name" maxlength="25"></form></td></tr>
-            <tr><th>Toote nimi</th><td><form class="text-box" style="padding: 1%"><input id="productName" maxlength="25"></form></td></tr>
+        <table style="top: 20%">
+            <tr><th>Kasutajanimi</th><td><form class="text-box" style="padding: 1%"><input id="name" maxlength="12"></form></td></tr>
+            <tr><th>Toote nimi</th>
+                <td>
+                    <select name="productName" id="productName">
+                        <option value="USB Type C laadija">USB Type C laadija</option>
+                        <option value="Kõrvasisesed kõrvaklapid">Kõrvasisesed kõrvaklapid</option>
+                        <option value="USB micro laadija">USB micro laadija</option>
+                        <option value="iPhone'i laadija">iPhone'i laadija</option>
+                        <option value="Kõrvapealsed kõrvaklapid (valged)">Kõrvapealsed kõrvaklapid (valged)</option>
+                        <option value="Kõrvapealsed kõrvaklapid (mustad)">Kõrvapealsed kõrvaklapid (mustad)</option>
+                        <option value="AUX juhe">AUX juhe</option>
+                        <option value="HDMI juhe">HDMI juhe</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><th>Toote kood</th><td><form class="text-box" style="padding: 1%"><input id="productCode" maxlength="10"></form></td></tr>
             <tr><th>Probleem</th><td><form class="text-box" style="padding: 1%"><textarea id="problem" maxlength="500"></textarea></form></td></tr>
         </table>
 
@@ -70,14 +84,16 @@
         function checkFields() {
             var name = document.getElementById("name").value;
             var productName = document.getElementById("productName").value;
+            var productCode = document.getElementById("productCode").value;
             var problem = document.getElementById("problem").value;
 
-            if (name === "" || productName === "" || problem === "") {
+            if (name === "" || productName === "" || productCode === "" || problem === "") {
                 alert("Palun täitke kõik väljad enne teavituse esitamist!");
             } else {
                 var problemData = {
                     name: name,
                     productName: productName,
+                    productCode: productCode,
                     problem: problem,
                 };
 

@@ -9,7 +9,6 @@
 </head>
 <body>
     <div class="background" onclick="blurFilter(event)">
-
         <!-- header -->
         <div class="header-box">
             <a href="admin_homepage.html" target="_self" class="custom-logo-link">
@@ -34,8 +33,10 @@
             <tr>
                 <th>Kasutajanimi</th>
                 <th>Toote nimi</th>
-                <th>Probleem</th>
+                <th>Toote kood</th>
+                <td class="problem-column">Probleem</td>
                 <th>Lahendatud</th>
+                <th class="del-button">Kustuta</th>
             </tr>
         </table>
 
@@ -76,45 +77,89 @@
 
         function fillTable() {
             const problemList = JSON.parse(localStorage.getItem("problem_list")) || [];
-
-            if (!problemList.length) {
-                console.error("Problem list is empty or not found.");
-                return;
-            }
-
             const table = document.getElementById("complaintTable");
 
             if (table) {
-                table.innerHTML = "<tr><th>Kasutajanimi</th><th>Toote nimi</th><th>Probleem</th><th>Lahendatud</th></tr>";
+                // Clear existing rows
+                table.innerHTML = "";
 
+                // Add header row
+                const headerRow = table.insertRow();
+                const headers = ["Kasutajanimi", "Toote nimi", "Toote kood", "Probleem", "Lahendatud", "Kustuta"];
+
+                headers.forEach(headerText => {
+                    const th = document.createElement("th");
+                    th.textContent = headerText;
+                    headerRow.appendChild(th);
+                });
+
+                // Add data rows
                 problemList.forEach(problemData => {
-                    const row = table.insertRow(-1);
-                    const cell1 = row.insertCell(0);
-                    const cell2 = row.insertCell(1);
-                    const cell3 = row.insertCell(2);
-                    const cell4 = row.insertCell(3);
+                    const row = table.insertRow();
+                    const cells = [
+                        problemData.name,
+                        problemData.productName,
+                        problemData.productCode,
+                        problemData.problem,
+                        '', // Placeholder for the Lahenda button
+                        '' // Placeholder for the Kustuta button
+                    ];
 
-                    cell1.textContent = problemData.name;
-                    cell2.textContent = problemData.productName;
-                    cell3.textContent = problemData.problem;
+                    cells.forEach((cellData, index) => {
+                        const cell = row.insertCell(index);
+                        cell.textContent = cellData;
 
-                    const button = document.createElement('button');
-                    button.textContent = 'Lahenda';
-                    button.classList.add("del-button", "button-text");
-                    button.style.fontSize = "18px";
-                    button.style.cursor = "pointer";
-
-                    button.addEventListener('click', function() {
-                        toggleColor(row);
+                        if (index === 4) {
+                            // Add Lahenda button
+                            const lahendaButton = createButton('Lahenda', () => {
+                                toggleColor(row);
+                            });
+                            cell.appendChild(lahendaButton);
+                        }
+                        else if (index === 5) {
+                            // Add Kustuta button
+                            const kustutaButton = createButton('Kustuta', () => {
+                                deleteUser(problemData.name);
+                            });
+                            cell.appendChild(kustutaButton);
+                        }
                     });
-
-                    cell4.appendChild(button);
 
                     row.style.color = 'red';
                 });
-            } else {
+            }
+            else {
                 console.error("Table element not found.");
             }
+        }
+
+        function createButton(text, callback) {
+            const button = document.createElement('button');
+            button.textContent = text;
+            button.classList.add("del-button", "button-text");
+            button.style.fontSize = "18px";
+            button.style.cursor = "pointer";
+            button.addEventListener('click', callback);
+            return button;
+        }
+
+        function deleteUser(name) {
+        var problemList = JSON.parse(localStorage.getItem("problem_list")) || {};
+        var index = problemList.findIndex(entry => entry.name === name);
+        if (index !== -1) {
+        // Remove the entry from the array
+        problemList.splice(index, 1);
+
+        // Save the updated array back to local storage
+        localStorage.setItem("problem_list", JSON.stringify(problemList));
+
+        // Reload the table
+        fillTable();
+        }
+        else {
+        console.error("Entry not found in problemList.");
+        }
+
         }
 
         document.addEventListener("DOMContentLoaded", function() {
